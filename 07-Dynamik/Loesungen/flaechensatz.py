@@ -100,7 +100,7 @@ def polygon_flaeche(x, y):
 def update(n):
     """Aktualisiere die Grafik zum n-ten Zeitschritt."""
     # Aktualisiere die Position des Himmelskörpers.
-    plot_planet.set_data(r[:, n] / AE)
+    plot_planet.set_data(r[:, n].reshape(-1, 1) / AE)
 
     # Aktualisiere des Polygon und die Angabe der Fläche.
     if n >= n_zeitschritte:

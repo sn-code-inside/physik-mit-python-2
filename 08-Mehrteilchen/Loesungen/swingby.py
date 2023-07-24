@@ -115,8 +115,8 @@ plot_planet, = ax_anim.plot([], [], 'o', color='blue')
 
 def update(n):
     """Aktualisiere die Grafik zum n-ten Zeitschritt."""
-    plot_sonde.set_data(r_sonde[:, n])
-    plot_planet.set_data(r_planet[:, n])
+    plot_sonde.set_data(r_sonde[:, n].reshape(-1, 1))
+    plot_planet.set_data(r_planet[:, n].reshape(-1, 1))
     return plot_sonde, plot_planet
 
 

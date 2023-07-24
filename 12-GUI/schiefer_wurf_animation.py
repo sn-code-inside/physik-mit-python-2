@@ -189,7 +189,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.ax.set_ylim(0, ymax)
 
         # Zeichne die Grafikelemente neu.
-        self.fig.canvas.resize_event()
+        self.fig.canvas.draw()
 
         # Lösche den Statustext der vorherigen Simulation.
         self.statusbar.clearMessage()
@@ -209,7 +209,8 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def update_anim(self, n):
         """Aktualisiere die Grafik zum n-ten Zeitschritt."""
-        self.plot_punkt.set_data(self.r[0, n], self.r[1, n])
+        self.plot_punkt.set_data(self.r[0, n].reshape(-1, 1),
+                                 self.r[1, n].reshape(-1, 1))
         self.text_zeit.set_text(f'$t$ = {self.t[n]:.2f} s')
 
         return self.plot_punkt, self.plot_bahn, self.text_zeit

@@ -102,7 +102,7 @@ def update(n):
     a = np.split(u_punkt, 2)[1]
 
     # Aktualisiere die Position des Himmelskörpers und die Pfeile.
-    plot_planet.set_data(r / AE)
+    plot_planet.set_data(r.reshape(-1, 1) / AE)
     pfeil_a.set_positions(r / AE, r / AE + scal_a * a)
     pfeil_v.set_positions(r / AE, r / AE + scal_v * v)
 

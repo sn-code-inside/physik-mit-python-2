@@ -36,5 +36,5 @@ plot = stabwerke.PlotStabwerk(ax, stabwerk, scal_kraft=0.002,
                               arrows_stab=False)
 for annot in plot.annot_stab:
     annot.set_color('black')
-fig.colorbar(plot.mapper, label='Kraft [N]')
+fig.colorbar(plot.mapper, label='Kraft [N]', ax=ax)
 plt.show()

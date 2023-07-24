@@ -64,8 +64,8 @@ plot_affe, = ax.plot([], [], 'o', color='blue', zorder=2)
 def update(n):
     """Aktualisiere die Grafik zum n-ten Zeitschritt."""
     # Aktualisiere die Position der beiden Punkte.
-    plot_pfeil.set_data(r_pfeil[n])
-    plot_affe.set_data(r_affe[n])
+    plot_pfeil.set_data(r_pfeil[n].reshape(-1, 1))
+    plot_affe.set_data(r_affe[n].reshape(-1, 1))
 
     # Plotte die Bahnkurve des Pfeils bis zur aktuellen Zeit.
     plot_bahn_pfeil.set_data(r_pfeil[:n + 1, 0],

@@ -141,8 +141,8 @@ linie_t_impuls, = ax_impuls.plot([], [], '-k')
 def update(n):
     """Aktualisiere die Grafik zum n-ten Zeitschritt."""
     # Aktualisiere die Position der Sterne.
-    plot_stern1.set_data(r1[:, n] / AE)
-    plot_stern2.set_data(r2[:, n] / AE)
+    plot_stern1.set_data(r1[:, n].reshape(-1, 1) / AE)
+    plot_stern2.set_data(r2[:, n].reshape(-1, 1) / AE)
 
     # Berechne die Momentanbeschleunigung und aktualisiere die
     # Vektorpfeile.

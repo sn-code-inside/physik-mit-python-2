@@ -79,7 +79,7 @@ def update(n):
     plot_faden.set_data([0, r[n, 0]], [0, r[n, 1]])
 
     # Aktualisiere die Position des Punktes.
-    plot_masse.set_data(r[n])
+    plot_masse.set_data(r[n].reshape(-1, 1))
 
     return plot_masse, pfeil_v, pfeil_a, plot_faden
 

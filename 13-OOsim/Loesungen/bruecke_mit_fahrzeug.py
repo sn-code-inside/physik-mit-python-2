@@ -93,7 +93,8 @@ def format_kraft(x, pos=None):
     return f'{x/1e3:.1f}'
 fmt = mpl.ticker.FuncFormatter(format_kraft)
 fig.colorbar(plot_stabwerk.mapper, format=fmt, label='Kraft [kN]',
-             fraction=0.12, pad=0.2, orientation='horizontal')
+             fraction=0.12, pad=0.2,
+             orientation='horizontal', ax=ax)
 
 
 def update(n):
@@ -121,7 +122,7 @@ def update(n):
         a.set_visible(True)
 
     # Aktualisiere die Position des Fahrzeugs.
-    plot_fahrzeug.set_data(x_position, 0)
+    plot_fahrzeug.set_data([x_position], [0])
 
     return plot_stabwerk.artists + [plot_fahrzeug]
 

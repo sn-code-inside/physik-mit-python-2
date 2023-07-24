@@ -103,7 +103,7 @@ def update(n):
                                  r_boot[n] + richtungen[n])
 
     # Aktualisiere die Position des Bootes.
-    plot_boot.set_data(r_boot[n])
+    plot_boot.set_data(r_boot[n].reshape(-1, 1))
 
     # Plotte die Bahnkurve des Bootes bis zum aktuellen
     # Zeitpunkt.

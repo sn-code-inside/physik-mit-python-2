@@ -138,7 +138,7 @@ mapper.set_array([-F_max, F_max])
 mapper.autoscale()
 
 # Erzeuge einen Farbbalken am Rand des Bildes.
-fig.colorbar(mapper, label='Kraft [N]')
+fig.colorbar(mapper, label='Kraft [N]', ax=ax)
 
 # Plotte die Stäbe und wähle die Farbe entsprechend der
 # wirkenden Kraft.

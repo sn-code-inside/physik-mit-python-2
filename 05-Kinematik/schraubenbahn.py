@@ -101,7 +101,7 @@ def update(n):
         pfeil_a.set_positions(r[n], r[n] + a[n])
 
     # Aktualisiere die Position des Punktes.
-    plot_punkt.set_data_3d(r[n, :])
+    plot_punkt.set_data_3d(r[n, :].reshape(-1, 1))
 
     return plot_punkt, pfeil_v, pfeil_a
 

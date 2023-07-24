@@ -102,7 +102,7 @@ mapper.autoscale()
 
 # Erzeuge einen Farbbalken am unteren Rand des Bildes.
 fig.colorbar(mapper, format='%.1f', label='Kraft [kN]',
-             orientation='horizontal', shrink=0.7)
+             orientation='horizontal', shrink=0.7, ax=ax)
 
 # Plotte die Stäbe und beschrifte diese mit dem Wert der Kraft.
 for stab, kraft in zip(staebe, F):

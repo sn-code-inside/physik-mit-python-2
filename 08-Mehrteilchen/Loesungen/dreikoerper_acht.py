@@ -121,7 +121,7 @@ text_zeit = ax.text(-1.1, 1.1, '')
 def update(n):
     """Aktualisiere die Grafik zum n-ten Zeitschritt."""
     for plot, ort in zip(plots_himmelskoerper, r):
-        plot.set_data(ort[:, n] / AE)
+        plot.set_data(ort[:, n].reshape(-1, 1) / AE)
     text_zeit.set_text(f'{t[n] / jahr:.2f} Jahre')
     return plots_himmelskoerper + [text_zeit]
 

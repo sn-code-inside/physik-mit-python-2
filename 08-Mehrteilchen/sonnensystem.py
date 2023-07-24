@@ -204,7 +204,7 @@ text_zeit = fig_bahn.text(0.5, 0.95, '')
 def update(n):
     """Aktualisiere die Grafik zum n-ten Zeitschritt."""
     for plot, ort in zip(plots_himmelskoerper, r):
-        plot.set_data_3d(ort[:, n] / AE)
+        plot.set_data_3d(ort[:, n].reshape(-1, 1) / AE)
 
     # Berechne das aktuelle Datum und stelle den Zeitpunkt dar.
     datum = datum_t0 + datetime.timedelta(seconds=t[n])

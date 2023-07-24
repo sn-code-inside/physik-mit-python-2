@@ -116,7 +116,7 @@ def update(n):
     """Aktualisiere die Grafik zum n-ten Zeitschritt."""
     # Aktualisiere die Position des Pendels.
     plot_stange.set_data([0, r[0, n]], [0, r[1, n]])
-    plot_koerper.set_data(r[:, n])
+    plot_koerper.set_data(r[:, n].reshape(-1, 1))
 
     # Stelle die Bahnkurve bis zum aktuellen Zeitpunkt dar.
     plot_bahn.set_data(r[:, :n + 1])

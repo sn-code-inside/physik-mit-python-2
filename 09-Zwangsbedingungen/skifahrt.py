@@ -209,7 +209,7 @@ plot_skifahrer, = ax_ort.plot([], [], 'o', color='red', zorder=5)
 def update(n):
     """Aktualisiere die Grafik zum n-ten Zeitschritt."""
     # Aktualisiere die Position des Skifahrers.
-    plot_skifahrer.set_data(r[:, n])
+    plot_skifahrer.set_data(r[:, n].reshape(-1, 1))
 
     # Stelle die Bahnkurve bis zum aktuellen Zeitpunkt dar.
     plot_bahn.set_data(r[:, :n])

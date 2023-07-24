@@ -118,8 +118,8 @@ def update(n):
     r_befest_rechts = np.array([x_rechts, 0.0])
 
     # Aktualisiere die Position der Massen.
-    plot_masse1.set_data(r_masse1)
-    plot_masse2.set_data(r_masse2)
+    plot_masse1.set_data(r_masse1.reshape(-1, 1))
+    plot_masse2.set_data(r_masse2.reshape(-1, 1))
 
     # Aktualisiere die linke Feder.
     plotdaten = schraubenfeder.data(r_befest_links, r_masse1,

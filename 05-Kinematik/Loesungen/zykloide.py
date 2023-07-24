@@ -113,7 +113,7 @@ def update(n):
         text_a.set_text(f'$a$ = {np.linalg.norm(a[n]):.1f} m/s²')
 
     # Aktualisiere die Position des Punktes.
-    plot_punkt.set_data(r[n])
+    plot_punkt.set_data(r[n].reshape(-1, 1))
 
     # Aktualisiere die Postion des Rades und mache es sichtbar.
     kreis_rad.set_center((v_rad * n * dt, radius_rad))

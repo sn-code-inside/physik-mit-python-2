@@ -70,7 +70,7 @@ plot_punkt, = ax.plot([], [], 'o', zorder=5,
 def update(n):
     """Aktualisiere die Grafik zum n-ten Zeitschritt."""
     # Aktualisiere die Position des Körpers.
-    plot_punkt.set_data(r[0:2, n])
+    plot_punkt.set_data(r[0:2, n].reshape(-1, 1))
 
     # Plotte die Bahnkurve bis zum aktuellen Zeitpunkt.
     plot_bahn.set_data(r[0:2, :n + 1])

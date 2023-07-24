@@ -104,8 +104,8 @@ def update(n):
     audio_index = int(n / fps * abtastrate)
 
     # Aktualisiere die Positionen von Quelle und Beobachter.
-    plot_quelle.set_data(r_B[audio_index])
-    plot_beobachter.set_data(r_Q[audio_index])
+    plot_quelle.set_data(r_B[audio_index].reshape(-1, 1))
+    plot_beobachter.set_data(r_Q[audio_index].reshape(-1, 1))
 
     return plot_quelle, plot_beobachter
 

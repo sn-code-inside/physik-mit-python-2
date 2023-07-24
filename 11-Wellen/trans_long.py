@@ -75,8 +75,8 @@ def update(n):
     plot_long.set_data(x + u, 0 * u)
 
     # Aktualisiere die Position des hervorgehobenen Punktes.
-    plot_trans_mark.set_data(x[index_mark], u[index_mark])
-    plot_long_mark.set_data(x[index_mark] + u[index_mark], 0)
+    plot_trans_mark.set_data([x[index_mark]], [u[index_mark]])
+    plot_long_mark.set_data([x[index_mark] + u[index_mark]], [0])
 
     return plot_long, plot_trans, plot_long_mark, plot_trans_mark
 

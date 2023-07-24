@@ -95,7 +95,7 @@ plot_punkt, = ax.plot([], [], 'or', zorder=5)
 
 def update(n):
     """Aktualisiere die Grafik zum n-ten Zeitschritt."""
-    plot_punkt.set_data(omega[n], x[n])
+    plot_punkt.set_data([omega[n]], [x[n]])
     plot_linie.set_data(omega[0:n + 1], x[0:n + 1])
     return plot_punkt, plot_linie
 

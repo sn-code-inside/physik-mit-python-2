@@ -133,7 +133,7 @@ def update(n):
     plot_teilchen.set_data(r[:, :, n].T)
 
     # Aktualisiere die Position des anregenden Teilchens.
-    plot_teilchen_anregung.set_data(anregung(t[n]))
+    plot_teilchen_anregung.set_data(anregung(t[n]).reshape(-1, 1))
 
     # Erzeuge ein Array der Auslenkungen aller Teilchen und ein
     # Array der x-Positionen der Ruhelagen.

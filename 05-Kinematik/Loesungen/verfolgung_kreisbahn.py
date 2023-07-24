@@ -97,8 +97,8 @@ def update(n):
     pfeil_v.set_positions(r_hund[n], r_hund[n] + v_hund[n])
 
     # Aktualisiere die Positionen von Hund und Mensch
-    plot_hund.set_data(r_hund[n])
-    plot_mensch.set_data(r_mensch[n])
+    plot_hund.set_data(r_hund[n].reshape(-1, 1))
+    plot_mensch.set_data(r_mensch[n].reshape(-1, 1))
 
     # Plotte die Bahnkurven bis zum aktuellen Zeitpunkt.
     plot_bahn_hund.set_data(r_hund[:n + 1, 0],

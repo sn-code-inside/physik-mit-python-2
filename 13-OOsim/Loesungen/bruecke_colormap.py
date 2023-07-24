@@ -80,6 +80,6 @@ def format_kraft(x, pos=None):
     return f'{x/1e3:.1f}'
 fmt = mpl.ticker.FuncFormatter(format_kraft)
 fig.colorbar(plot_stabwerk.mapper, format=fmt, label='Kraft [kN]',
-             shrink=0.7, orientation='horizontal')
+             shrink=0.7, orientation='horizontal', ax=ax)
 
 plt.show()

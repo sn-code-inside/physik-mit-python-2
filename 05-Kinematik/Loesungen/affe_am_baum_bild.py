@@ -72,8 +72,8 @@ plot_affe, = ax.plot([], [], 'o', color='blue', zorder=4)
 def update(n):
     """Aktualisiere die Grafik zum n-ten Zeitschritt."""
     # Aktualisiere die Position der beiden Punkte.
-    plot_pfeil.set_data(r_pfeil[n])
-    plot_affe.set_data(r_affe[n])
+    plot_pfeil.set_data(r_pfeil[n].reshape(-1, 1))
+    plot_affe.set_data(r_affe[n].reshape(-1, 1))
 
     # Aktualisiere die Position des Affenbildes.
     box_affe.xybox = r_affe[n]

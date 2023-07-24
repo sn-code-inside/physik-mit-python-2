@@ -102,7 +102,7 @@ def update(n):
     plot_bahn.set_data_3d(r[:, :n + 1])
 
     # Aktualisiere die Position des Pendelkörpers.
-    plot_koerper.set_data_3d(r[:, n])
+    plot_koerper.set_data_3d(r[:, n].reshape(-1, 1))
 
     # Aktualisiere die Pendelstange.
     plot_stange.set_data_3d([0, r[0, n]],

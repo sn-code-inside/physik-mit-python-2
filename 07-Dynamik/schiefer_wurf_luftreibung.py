@@ -113,7 +113,7 @@ def update(n):
     a = F(v_interp[:, n]) / m
 
     # Aktualisiere die Position des Balls.
-    plot_ball.set_data(r)
+    plot_ball.set_data(r.reshape(-1, 1))
 
     # Aktualisiere die Pfeile für Geschw. und Beschleunigung.
     pfeil_v.set_positions(r, r + scal_v * v)
