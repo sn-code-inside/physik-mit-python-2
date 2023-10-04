@@ -475,10 +475,10 @@ class Arrow3D(mpl.patches.FancyArrowPatch):
 
     def do_3d_projection(self, renderer=None):
         """Projiziere die Punkte in die Bildebene."""
-        p = mpl_toolkits.mplot3d.proj3d.proj_points(self._pos,
-                                                    self.axes.M)
-        super().set_positions(*p[:, 0:2])
-        return np.min(p[:, 2])
+        p = mpl_toolkits.mplot3d.proj3d.proj_transform(*self._pos.T, self.axes.M)
+        p = np.array(p)
+        super().set_positions(p[:, 0], p[:, 1])
+        return np.min(p[2, :])
 
 
 class Annotation3D(mpl.text.Annotation):
